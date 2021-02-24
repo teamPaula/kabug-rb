@@ -21,9 +21,10 @@ bundle exec cucumber
 `
 
 ### Executar no servidor de CI (gerando reportes Json) - nao sobe instancia do navegador
-´
+`
 bundle exec cucumber -p ci
-´
+`
+ 
 
 
 
