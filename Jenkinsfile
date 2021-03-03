@@ -17,6 +17,7 @@ pipeline {
        stage ('Test') {
            steps {
                echo 'Running regression tests!'
+               sh 'cucumber -p ci'
            }
        }
        
