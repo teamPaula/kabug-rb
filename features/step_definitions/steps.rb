@@ -1,5 +1,20 @@
 #encoding: utf-8
 
+Dado("que acesso a página login") do
+  visit "/index.php?route=account/login"
+end
+
+Quando("eu submeto as minhas credenciais {string} e {string}") do |email, password|
+  fill_in "email", with: email
+  fill_in "password", with: password
+  find("form input[type=submit]").click
+end
+
+Então("devo ver a seguinte mensagem de alerta:") do |expect_message|
+  alert = find(".alert-danger")
+  expect(alert.text).to eql expect_message
+end
+
 Dado("que encontrei o {string} no catálogo") do |product|
   @product = product
   within("#search") do
